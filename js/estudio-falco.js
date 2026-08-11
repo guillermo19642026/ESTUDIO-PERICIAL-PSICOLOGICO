@@ -1203,3 +1203,151 @@ if (principlesSection) {
   }
 
 }
+
+
+/* =========================================================
+   SITUACIONES — SCROLL CINEMATOGRÁFICO
+========================================================= */
+
+const situationsSection =
+  document.querySelector(".ef-situations-cinema");
+
+if (situationsSection) {
+
+  const situations =
+    [...situationsSection.querySelectorAll(".ef-situation")];
+
+  if (reduceMotion) {
+
+    situations.forEach((item) => {
+      item.classList.add("is-situation-active");
+    });
+
+  } else {
+
+    const situationsObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const activeItem = entry.target;
+            const activeIndex =
+              situations.indexOf(activeItem);
+
+            situations.forEach((item, index) => {
+
+              item.classList.remove(
+                "is-situation-active",
+                "is-situation-past"
+              );
+
+              if (index < activeIndex) {
+                item.classList.add(
+                  "is-situation-past"
+                );
+              }
+
+              if (index === activeIndex) {
+                item.classList.add(
+                  "is-situation-active"
+                );
+              }
+
+            });
+
+          });
+
+        },
+        {
+          threshold: 0.46,
+          rootMargin:
+            "-14% 0px -24% 0px"
+        }
+      );
+
+    situations.forEach((item) => {
+      situationsObserver.observe(item);
+    });
+
+  }
+
+}
+
+
+/* =========================================================
+   PROFESIONALES DEL DERECHO — SCROLL CINEMATOGRÁFICO
+========================================================= */
+
+const lawyersSection =
+  document.querySelector(".ef-lawyers-cinema");
+
+if (lawyersSection) {
+
+  const lawyerServices =
+    [...lawyersSection.querySelectorAll(".ef-lawyer-service")];
+
+  if (reduceMotion) {
+
+    lawyerServices.forEach((item) => {
+      item.classList.add("is-lawyer-active");
+    });
+
+  } else {
+
+    const lawyersObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const activeItem = entry.target;
+            const activeIndex =
+              lawyerServices.indexOf(activeItem);
+
+            lawyerServices.forEach((item, index) => {
+
+              item.classList.remove(
+                "is-lawyer-active",
+                "is-lawyer-past"
+              );
+
+              if (index < activeIndex) {
+                item.classList.add(
+                  "is-lawyer-past"
+                );
+              }
+
+              if (index === activeIndex) {
+                item.classList.add(
+                  "is-lawyer-active"
+                );
+              }
+
+            });
+
+          });
+
+        },
+        {
+          threshold: 0.46,
+          rootMargin:
+            "-14% 0px -24% 0px"
+        }
+      );
+
+    lawyerServices.forEach((item) => {
+      lawyersObserver.observe(item);
+    });
+
+  }
+
+}

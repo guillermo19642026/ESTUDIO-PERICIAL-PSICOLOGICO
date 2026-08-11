@@ -7095,3 +7095,1173 @@ body.is-menu-open {
 
   color: rgba(255, 255, 255, 0.36);
 }
+
+
+/* =========================================================
+   SITUACIONES — ORIENTACIÓN AL VISITANTE
+========================================================= */
+
+.ef-situations {
+  position: relative;
+  overflow: hidden;
+  padding: 165px 0 175px;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(200, 169, 107, 0.07),
+      transparent 26%
+    ),
+    linear-gradient(
+      180deg,
+      #06101c 0%,
+      #040a13 100%
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ef-situations::after {
+  content: "ORIENTACIÓN";
+
+  position: absolute;
+  right: -40px;
+  top: 45%;
+
+  transform:
+    rotate(90deg)
+    translateX(50%);
+
+  transform-origin: right center;
+
+  font-family: var(--serif);
+  font-size: 10px;
+
+  letter-spacing: 0.55em;
+
+  color: rgba(255, 255, 255, 0.04);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
+.ef-situations__header {
+  display: grid;
+
+  grid-template-columns:
+    0.72fr
+    2fr;
+
+  gap: 90px;
+
+  margin-bottom: 95px;
+}
+
+.ef-situations__index {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+
+  padding-top: 13px;
+}
+
+.ef-situations__overline {
+  margin: 0 0 20px;
+
+  color: var(--gold-soft);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+.ef-situations__heading h2 {
+  margin: 0;
+
+  max-width: 920px;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(62px, 8vw, 118px);
+
+  font-weight: 400;
+  line-height: 0.88;
+
+  letter-spacing: -0.055em;
+}
+
+.ef-situations__heading h2 span {
+  display: block;
+
+  color: var(--gold-soft);
+}
+
+.ef-situations__heading > p:last-child {
+  max-width: 720px;
+
+  margin: 32px 0 0;
+
+  font-size: 16px;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.56);
+}
+
+
+/* =========================================================
+   LISTADO
+========================================================= */
+
+.ef-situations__list {
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ef-situation {
+  position: relative;
+
+  min-height: 170px;
+
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 38px;
+
+  padding: 34px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  opacity: 0.22;
+
+  transform:
+    translateY(32px)
+    scale(0.992);
+
+  filter: blur(3px);
+
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease,
+    background 0.4s ease,
+    padding 0.4s ease;
+}
+
+.ef-situation::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 18%;
+
+  width: 1px;
+  height: 0;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      var(--gold-soft),
+      transparent
+    );
+
+  transition:
+    height 0.7s ease,
+    opacity 0.5s ease;
+}
+
+
+/* número */
+
+.ef-situation__number {
+  font-size: 10px;
+
+  letter-spacing: 0.22em;
+
+  color:
+    rgba(200, 169, 107, 0.5);
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* contenido */
+
+.ef-situation__content {
+  max-width: 850px;
+}
+
+.ef-situation__content h3 {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(25px, 2.7vw, 40px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  transition:
+    color 0.45s ease,
+    transform 0.45s ease;
+}
+
+.ef-situation__content > p:not(.ef-situation__label) {
+  max-width: 740px;
+
+  margin: 13px 0 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  transition:
+    color 0.45s ease,
+    transform 0.45s ease;
+}
+
+
+/* acción */
+
+.ef-situation__action {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 255, 255, 0.38);
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* =========================================================
+   ESTADO ACTIVO POR SCROLL
+========================================================= */
+
+.ef-situation.is-situation-active {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter: blur(0);
+
+  padding-left: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(200, 169, 107, 0.045),
+      transparent 70%
+    );
+}
+
+.ef-situation.is-situation-past {
+  opacity: 0.52;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter: blur(0);
+}
+
+.ef-situation.is-situation-active::before {
+  height: 64%;
+  opacity: 0.7;
+}
+
+.ef-situation.is-situation-active
+.ef-situation__number {
+  color: var(--gold-soft);
+
+  transform: translateX(5px);
+}
+
+.ef-situation.is-situation-active
+.ef-situation__content h3 {
+  color: var(--gold-soft);
+
+  transform: translateX(8px);
+}
+
+.ef-situation.is-situation-active
+.ef-situation__content > p:not(.ef-situation__label) {
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  transform: translateX(8px);
+}
+
+.ef-situation.is-situation-active
+.ef-situation__action {
+  color: var(--gold-soft);
+
+  transform: translateX(-6px);
+}
+
+
+/* =========================================================
+   DESTACADA — NO SÉ QUÉ NECESITO
+========================================================= */
+
+.ef-situation--featured {
+  margin-top: 34px;
+
+  padding-top: 45px;
+  padding-bottom: 45px;
+
+  border:
+    1px solid rgba(200, 169, 107, 0.16);
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(200, 169, 107, 0.07),
+      transparent 35%
+    ),
+    rgba(255, 255, 255, 0.018);
+}
+
+.ef-situation--featured.is-situation-active {
+  padding-left: 28px;
+
+  border-color:
+    rgba(200, 169, 107, 0.35);
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(200, 169, 107, 0.11),
+      transparent 38%
+    ),
+    rgba(200, 169, 107, 0.025);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.18);
+}
+
+.ef-situation__label {
+  margin: 0 0 8px;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+
+  color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   CIERRE
+========================================================= */
+
+.ef-situations__closing {
+  margin-top: 80px;
+
+  padding-top: 35px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ef-situations__closing p {
+  max-width: 620px;
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(22px, 2.5vw, 34px);
+
+  line-height: 1.35;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+}
+
+.ef-situations__closing p span {
+  color: var(--gold-soft);
+}
+
+.ef-situations__closing > a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 7px;
+
+  border-bottom:
+    1px solid rgba(200, 169, 107, 0.4);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+
+  color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .ef-situations {
+    padding: 120px 0 130px;
+  }
+
+  .ef-situations__header {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 70px;
+  }
+
+  .ef-situation {
+    grid-template-columns:
+      48px
+      1fr;
+
+    gap: 22px;
+
+    min-height: 0;
+  }
+
+  .ef-situation__action {
+    grid-column: 2;
+
+    justify-self: start;
+
+    margin-top: 6px;
+  }
+
+  .ef-situations__closing {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 620px) {
+
+  .ef-situations {
+    padding: 95px 0 105px;
+  }
+
+  .ef-situations::after {
+    display: none;
+  }
+
+  .ef-situations__heading h2 {
+    font-size: 56px;
+  }
+
+  .ef-situation {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+    padding: 28px 0;
+  }
+
+  .ef-situation__number {
+    margin-bottom: 3px;
+  }
+
+  .ef-situation__action {
+    grid-column: 1;
+  }
+
+  .ef-situation.is-situation-active,
+  .ef-situation--featured.is-situation-active {
+    padding-left: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ef-situation {
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+  }
+
+}
+
+
+/* =========================================================
+   PROFESIONALES DEL DERECHO
+========================================================= */
+
+.ef-lawyers {
+  position: relative;
+  overflow: hidden;
+  padding: 165px 0 180px;
+
+  background:
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(200, 169, 107, 0.07),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #040a13 0%,
+      #07111d 100%
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ef-lawyers::after {
+  content: "DERECHO";
+
+  position: absolute;
+  left: -35px;
+  top: 42%;
+
+  transform:
+    rotate(-90deg)
+    translateX(-50%);
+
+  transform-origin: left center;
+
+  font-family: var(--serif);
+  font-size: 10px;
+
+  letter-spacing: 0.55em;
+
+  color: rgba(255, 255, 255, 0.04);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
+.ef-lawyers__header {
+  display: grid;
+
+  grid-template-columns:
+    0.72fr
+    2fr;
+
+  gap: 90px;
+
+  margin-bottom: 90px;
+}
+
+.ef-lawyers__index {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+
+  padding-top: 13px;
+}
+
+.ef-lawyers__overline {
+  margin: 0 0 20px;
+
+  color: var(--gold-soft);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+.ef-lawyers__heading h2 {
+  margin: 0;
+
+  max-width: 980px;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(58px, 7.4vw, 108px);
+
+  font-weight: 400;
+  line-height: 0.9;
+
+  letter-spacing: -0.05em;
+}
+
+.ef-lawyers__heading h2 span {
+  display: block;
+
+  color: var(--gold-soft);
+}
+
+.ef-lawyers__heading > p:last-child {
+  max-width: 760px;
+
+  margin: 32px 0 0;
+
+  font-size: 16px;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.56);
+}
+
+
+/* =========================================================
+   FRASE CENTRAL
+========================================================= */
+
+.ef-lawyers__statement {
+  margin-bottom: 95px;
+
+  padding: 48px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 70px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ef-lawyers__statement p {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(24px, 2.8vw, 39px);
+
+  line-height: 1.35;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+}
+
+.ef-lawyers__statement span {
+  color:
+    rgba(255, 255, 255, 0.9);
+}
+
+.ef-lawyers__statement strong {
+  font-weight: 500;
+  color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   SERVICIOS PARA ABOGADOS
+========================================================= */
+
+.ef-lawyers__services {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ef-lawyer-service {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 330px;
+
+  padding: 42px;
+
+  background:
+    #06101b;
+
+  opacity: 0.18;
+
+  transform:
+    translateY(30px)
+    scale(0.985);
+
+  filter: blur(3px);
+
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.ef-lawyer-service--wide {
+  grid-column: 1 / -1;
+
+  min-height: 280px;
+
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(0, 1fr)
+    auto;
+
+  gap: 30px;
+
+  align-items: center;
+}
+
+
+/* número */
+
+.ef-lawyer-service__number {
+  display: block;
+
+  margin-bottom: 55px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.22em;
+
+  color:
+    rgba(200, 169, 107, 0.45);
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* contenido */
+
+.ef-lawyer-service__content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 650px;
+}
+
+.ef-lawyer-service__label {
+  margin: 0 0 11px;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+
+  color:
+    rgba(200, 169, 107, 0.6);
+}
+
+.ef-lawyer-service__content h3 {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(29px, 3vw, 44px);
+
+  font-weight: 400;
+  line-height: 1.12;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.ef-lawyer-service__content > p:last-child {
+  max-width: 570px;
+
+  margin: 18px 0 0;
+
+  font-size: 14px;
+  line-height: 1.75;
+
+  color:
+    rgba(255, 255, 255, 0.44);
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* palabra de fondo */
+
+.ef-lawyer-service__mark {
+  position: absolute;
+
+  right: 20px;
+  bottom: -10px;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(58px, 7vw, 100px);
+
+  line-height: 0.8;
+
+  color:
+    rgba(255, 255, 255, 0.018);
+
+  pointer-events: none;
+  user-select: none;
+
+  transition:
+    color 0.5s ease,
+    transform 0.5s ease;
+}
+
+
+/* acción */
+
+.ef-lawyer-service__action {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 7px;
+
+  border-bottom:
+    1px solid rgba(200, 169, 107, 0.4);
+
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+
+  color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   ACTIVO POR SCROLL
+========================================================= */
+
+.ef-lawyer-service.is-lawyer-active {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter: blur(0);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(200, 169, 107, 0.05),
+      #06101b 55%
+    );
+}
+
+.ef-lawyer-service.is-lawyer-past {
+  opacity: 0.52;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter: blur(0);
+}
+
+.ef-lawyer-service.is-lawyer-active
+.ef-lawyer-service__number {
+  color: var(--gold-soft);
+
+  transform: translateX(4px);
+}
+
+.ef-lawyer-service.is-lawyer-active
+.ef-lawyer-service__content h3 {
+  color: var(--gold-soft);
+
+  transform: translateX(7px);
+}
+
+.ef-lawyer-service.is-lawyer-active
+.ef-lawyer-service__content > p:last-child {
+  color:
+    rgba(255, 255, 255, 0.67);
+
+  transform: translateX(7px);
+}
+
+.ef-lawyer-service.is-lawyer-active
+.ef-lawyer-service__mark {
+  color:
+    rgba(200, 169, 107, 0.045);
+
+  transform: translateY(-6px);
+}
+
+
+/* =========================================================
+   CIERRE
+========================================================= */
+
+.ef-lawyers__closing {
+  margin-top: 80px;
+
+  padding-top: 36px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  gap: 50px;
+
+  align-items: center;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ef-lawyers__closing > div {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.ef-lawyers__closing > div span {
+  padding:
+    7px 10px;
+
+  border:
+    1px solid rgba(200, 169, 107, 0.18);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+
+  color:
+    rgba(200, 169, 107, 0.65);
+}
+
+.ef-lawyers__closing p {
+  max-width: 560px;
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(18px, 2vw, 27px);
+
+  line-height: 1.45;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+}
+
+.ef-lawyers__closing p strong {
+  display: block;
+
+  font-weight: 500;
+
+  color:
+    rgba(255, 255, 255, 0.86);
+}
+
+.ef-lawyers__closing > a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding-bottom: 7px;
+
+  border-bottom:
+    1px solid rgba(200, 169, 107, 0.4);
+
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+
+  color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+
+  .ef-lawyers {
+    padding: 120px 0 130px;
+  }
+
+  .ef-lawyers__header {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .ef-lawyers__statement {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .ef-lawyers__services {
+    grid-template-columns: 1fr;
+  }
+
+  .ef-lawyer-service--wide {
+    grid-column: auto;
+
+    grid-template-columns:
+      1fr;
+
+    align-items: start;
+  }
+
+  .ef-lawyer-service--wide
+  .ef-lawyer-service__number {
+    margin-bottom: 20px;
+  }
+
+  .ef-lawyers__closing {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+}
+
+
+@media (max-width: 620px) {
+
+  .ef-lawyers {
+    padding: 95px 0 105px;
+  }
+
+  .ef-lawyers::after {
+    display: none;
+  }
+
+  .ef-lawyers__heading h2 {
+    font-size: 52px;
+  }
+
+  .ef-lawyer-service {
+    min-height: 0;
+
+    padding: 32px 24px;
+  }
+
+  .ef-lawyer-service__number {
+    margin-bottom: 35px;
+  }
+
+  .ef-lawyer-service__mark {
+    font-size: 62px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ef-lawyer-service {
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+  }
+
+}
+
