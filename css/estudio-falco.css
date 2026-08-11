@@ -8265,3 +8265,197 @@ body.is-menu-open {
 
 }
 
+/* =========================================================
+   MENÚ EXPLORAR — AJUSTE FINAL CON NUEVAS SECCIONES
+========================================================= */
+
+.ef-menu__content {
+  width: min(1180px, calc(100% - 80px));
+
+  min-height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding:
+    clamp(85px, 10vh, 120px)
+    0
+    45px;
+
+  overflow-y: auto;
+}
+
+
+/* título institucional */
+
+.ef-menu__eyebrow {
+  flex: 0 0 auto;
+
+  margin-bottom: 26px;
+}
+
+
+/* navegación */
+
+.ef-menu__nav {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 70px;
+  row-gap: 0;
+
+  width: 100%;
+
+  flex: 0 0 auto;
+}
+
+
+.ef-menu__nav a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 42px;
+
+  padding:
+    8px
+    26px
+    8px
+    0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  font-size:
+    clamp(16px, 1.35vw, 21px);
+
+  line-height: 1.2;
+}
+
+
+.ef-menu__nav a::after {
+  content: "→";
+
+  position: absolute;
+
+  right: 2px;
+
+  opacity: 0;
+
+  color: var(--gold-soft);
+
+  transform: translateX(-8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.ef-menu__nav a:hover::after,
+.ef-menu__nav a:focus-visible::after {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* accesos directos */
+
+.ef-menu__quick {
+  margin-top: 28px;
+
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   PANTALLAS MEDIANAS
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .ef-menu__content {
+    width: min(100% - 42px, 720px);
+
+    padding:
+      90px
+      0
+      35px;
+  }
+
+
+  .ef-menu__nav {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+  }
+
+
+  .ef-menu__nav a {
+    min-height: 38px;
+
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .ef-menu__content {
+    width: calc(100% - 32px);
+
+    padding:
+      82px
+      0
+      28px;
+  }
+
+
+  .ef-menu__eyebrow {
+    margin-bottom: 18px;
+  }
+
+
+  .ef-menu__nav a {
+    min-height: 36px;
+
+    padding:
+      7px
+      22px
+      7px
+      0;
+
+    font-size: 15px;
+  }
+
+
+  .ef-menu__quick {
+    margin-top: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   AJUSTE SUPERIOR MENÚ EXPLORAR
+========================================================= */
+
+.ef-menu__content {
+  padding-top: clamp(110px, 13vh, 150px);
+}
+
+.ef-menu__eyebrow {
+  margin-top: 6px;
+}
