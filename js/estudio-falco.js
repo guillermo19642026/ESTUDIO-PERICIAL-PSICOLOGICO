@@ -1351,3 +1351,77 @@ if (lawyersSection) {
   }
 
 }
+
+
+/* =========================================================
+   CÓMO TRABAJAMOS — SCROLL CINEMATOGRÁFICO
+========================================================= */
+
+const processSection =
+  document.querySelector(".ef-process-cinema");
+
+if (processSection) {
+
+  const processSteps =
+    [...processSection.querySelectorAll(".ef-process-step")];
+
+  if (reduceMotion) {
+
+    processSteps.forEach((item) => {
+      item.classList.add("is-process-active");
+    });
+
+  } else {
+
+    const processObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const activeItem = entry.target;
+            const activeIndex =
+              processSteps.indexOf(activeItem);
+
+            processSteps.forEach((item, index) => {
+
+              item.classList.remove(
+                "is-process-active",
+                "is-process-past"
+              );
+
+              if (index < activeIndex) {
+                item.classList.add(
+                  "is-process-past"
+                );
+              }
+
+              if (index === activeIndex) {
+                item.classList.add(
+                  "is-process-active"
+                );
+              }
+
+            });
+
+          });
+
+        },
+        {
+          threshold: 0.46,
+          rootMargin:
+            "-14% 0px -24% 0px"
+        }
+      );
+
+    processSteps.forEach((item) => {
+      processObserver.observe(item);
+    });
+
+  }
+
+}
