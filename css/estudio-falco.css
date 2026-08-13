@@ -9408,3 +9408,303 @@ body.is-menu-open {
   }
 
 }
+
+
+/* =========================================================
+   14 · ATENCIÓN INTERNACIONAL
+========================================================= */
+
+.ef-international {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 28%,
+      rgba(201, 164, 92, 0.09),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 20, 35, 0.98),
+      rgba(6, 16, 29, 1)
+    );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* ---------------------------------------------------------
+   CABECERA
+--------------------------------------------------------- */
+
+.ef-international__header {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 760px);
+  gap: 48px;
+
+  margin-bottom: 64px;
+}
+
+
+.ef-international__header h2 {
+  margin: 12px 0 24px;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+
+  color: #f4efe6;
+}
+
+
+.ef-international__header h2 span {
+  display: block;
+  color: #d7b36a;
+}
+
+
+.ef-international__header > div > p:last-child {
+  max-width: 680px;
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.85;
+
+  color: rgba(244, 239, 230, 0.64);
+}
+
+
+/* ---------------------------------------------------------
+   TARJETAS
+--------------------------------------------------------- */
+
+.ef-international__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+
+  margin-left: 208px;
+}
+
+
+.ef-international__card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 330px;
+  padding: 42px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(215, 179, 106, 0.22);
+  border-radius: 24px;
+
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background 300ms ease;
+}
+
+
+a.ef-international__card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(215, 179, 106, 0.55);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(215, 179, 106, 0.09),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+
+/* línea superior dorada */
+
+.ef-international__card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 42px;
+
+  width: 52px;
+  height: 1px;
+
+  background: #d7b36a;
+}
+
+
+/* ---------------------------------------------------------
+   PAÍS
+--------------------------------------------------------- */
+
+.ef-international__country {
+  display: block;
+
+  margin-bottom: 42px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+
+  color: #d7b36a;
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULOS
+--------------------------------------------------------- */
+
+.ef-international__card h3 {
+  max-width: 440px;
+
+  margin: 0 0 18px;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: #f4efe6;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO
+--------------------------------------------------------- */
+
+.ef-international__card p {
+  max-width: 470px;
+
+  margin: 0 0 38px;
+
+  font-size: 0.92rem;
+  line-height: 1.75;
+
+  color: rgba(244, 239, 230, 0.58);
+}
+
+
+/* ---------------------------------------------------------
+   ACCIÓN
+--------------------------------------------------------- */
+
+.ef-international__action {
+  display: inline-block;
+
+  margin-top: auto;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #d7b36a;
+}
+
+
+/* ---------------------------------------------------------
+   ESTADOS UNIDOS · PRÓXIMAMENTE
+--------------------------------------------------------- */
+
+.ef-international__card--soon {
+  opacity: 0.62;
+}
+
+
+.ef-international__card--soon::after {
+  content: "EN PREPARACIÓN";
+
+  position: absolute;
+  top: 40px;
+  right: 38px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+
+  font-size: 0.54rem;
+  letter-spacing: 0.13em;
+
+  color: rgba(244, 239, 230, 0.48);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+
+  .ef-international {
+    padding: 100px 0;
+  }
+
+
+  .ef-international__header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+
+  .ef-international__grid {
+    margin-left: 0;
+  }
+
+}
+
+
+@media (max-width: 720px) {
+
+  .ef-international {
+    padding: 82px 0;
+  }
+
+
+  .ef-international__grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .ef-international__card {
+    min-height: 300px;
+    padding: 32px;
+  }
+
+
+  .ef-international__card::before {
+    left: 32px;
+  }
+
+
+  .ef-international__card--soon::after {
+    top: 30px;
+    right: 28px;
+  }
+
+
+  .ef-international__country {
+    margin-bottom: 34px;
+  }
+
+}
