@@ -9708,3 +9708,368 @@ a.ef-international__card:hover {
   }
 
 }
+
+
+/* =========================================================
+   ACCESO RÁPIDO · ORIENTACIÓN INICIAL
+========================================================= */
+
+.ef-quick-access {
+  position: relative;
+  padding: 96px 0 110px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(188, 146, 70, 0.10),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(45, 82, 128, 0.16),
+      transparent 36%
+    ),
+    #07111f;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.ef-quick-access::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px;
+}
+
+
+.ef-quick-access__inner {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+
+.ef-quick-access__header {
+  max-width: 760px;
+  margin-bottom: 52px;
+}
+
+
+.ef-quick-access__eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #c9a05f;
+}
+
+
+.ef-quick-access__header h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4.7rem);
+  line-height: 0.98;
+  font-weight: 500;
+  color: #f3f5f8;
+}
+
+
+.ef-quick-access__header h2 span {
+  display: block;
+  color: #c9a05f;
+}
+
+
+.ef-quick-access__header p {
+  max-width: 620px;
+  margin: 24px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(239, 243, 248, 0.68);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.ef-quick-access__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+.ef-quick-card {
+  position: relative;
+  min-height: 390px;
+  padding: 30px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.ef-quick-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(201, 160, 95, 0.95),
+      rgba(201, 160, 95, 0)
+    );
+  opacity: 0.55;
+}
+
+
+.ef-quick-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -90px;
+  top: -90px;
+  border-radius: 50%;
+  background: rgba(201, 160, 95, 0.08);
+  filter: blur(8px);
+  transition:
+    transform 0.45s ease,
+    opacity 0.45s ease;
+}
+
+
+.ef-quick-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(201, 160, 95, 0.42);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+
+.ef-quick-card:hover::after {
+  transform: scale(1.22);
+  opacity: 1;
+}
+
+
+/* TARJETA DESTACADA */
+
+.ef-quick-card--primary {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(201, 160, 95, 0.14),
+      rgba(255, 255, 255, 0.025)
+    );
+  border-color:
+    rgba(201, 160, 95, 0.28);
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.ef-quick-card__number {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin-bottom: 54px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: #c9a05f;
+}
+
+
+.ef-quick-card__content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.ef-quick-card__label {
+  display: block;
+  margin-bottom: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(239, 243, 248, 0.52);
+}
+
+
+.ef-quick-card h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.45rem);
+  line-height: 1.05;
+  font-weight: 500;
+  color: #f4f6f8;
+}
+
+
+.ef-quick-card h3 span {
+  color: #c9a05f;
+}
+
+
+.ef-quick-card p {
+  margin: 20px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  line-height: 1.72;
+  color: rgba(239, 243, 248, 0.66);
+}
+
+
+/* =========================================================
+   ACCIÓN
+========================================================= */
+
+.ef-quick-card__action {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  color: #d8b678;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.ef-quick-card__action > span {
+  transition: transform 0.3s ease;
+}
+
+
+.ef-quick-card:hover
+.ef-quick-card__action > span {
+  transform: translate(4px, -2px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+
+  .ef-quick-access {
+    padding:
+      82px 0 90px;
+  }
+
+  .ef-quick-access__inner {
+    width:
+      min(100% - 48px, 900px);
+  }
+
+  .ef-quick-access__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .ef-quick-card {
+    min-height: 320px;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .ef-quick-access {
+    padding:
+      68px 0 76px;
+  }
+
+  .ef-quick-access__inner {
+    width:
+      calc(100% - 32px);
+  }
+
+  .ef-quick-access__header {
+    margin-bottom: 36px;
+  }
+
+  .ef-quick-access__header h2 {
+    font-size:
+      clamp(2.2rem, 11vw, 3.3rem);
+  }
+
+  .ef-quick-card {
+    min-height: 300px;
+    padding:
+      26px 22px 24px;
+  }
+
+  .ef-quick-card__number {
+    margin-bottom: 38px;
+  }
+
+  .ef-quick-card h3 {
+    font-size: 2rem;
+  }
+
+}

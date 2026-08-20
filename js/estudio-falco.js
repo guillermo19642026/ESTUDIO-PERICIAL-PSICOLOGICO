@@ -97,6 +97,9 @@ const revealElements = document.querySelectorAll(`
   .ef-intro__closing,
   .ef-intro__links,
 
+   .ef-quick-access__header,
+   .ef-quick-card,
+
   .ef-paths__header,
   .ef-path,
 
@@ -172,6 +175,7 @@ function applyStagger(selector, delay = 80) {
   });
 }
 
+applyStagger(".ef-quick-card", 90);
 applyStagger(".ef-path", 70);
 applyStagger(".ef-service", 70);
 applyStagger(".ef-knowledge-card", 85);
