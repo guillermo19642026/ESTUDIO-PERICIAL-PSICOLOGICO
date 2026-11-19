@@ -10072,4 +10072,6 @@ a.ef-international__card:hover {
     font-size: 2rem;
   }
 
-}
+}.ef-portal-cta{display:table;margin:16px auto;padding:14px 22px;border:1px solid var(--gold-soft);border-radius:50px;color:var(--gold-soft);text-decoration:none;font-weight:600}
+.ef-portal-cta{transition:all .3s ease;background:rgba(255,229,138,.06)}.ef-portal-cta:hover{background:rgba(255,229,138,.16);transform:translateY(-2px)}
+.ef-portal-cta{position:relative;z-index:9999;pointer-events:auto;cursor:pointer}
